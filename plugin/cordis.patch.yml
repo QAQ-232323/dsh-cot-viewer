@@ -1,0 +1,7 @@
+# @cetacea/dsh-cot-viewer —— DSH bundle patch
+#
+# 装上之后：「设置 → 插件」里能看到它；侧边栏出现「思维链」图标，
+# 点开主区是思维链浏览器（/dsh-cot/ui/）。
+- insert:
+    - id: dsh-cot-viewer
+      name: "@cetacea/dsh-cot-viewer"

@@ -1,0 +1,37 @@
+{
+  "name": "@cetacea/dsh-cot-viewer",
+  "version": "0.1.0",
+  "description": "在 DSH 里直接翻看、检索、翻译思维链：侧边栏「思维链」入口 + 主面板浏览器。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "ui",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "reasoning",
+    "chain-of-thought"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    }
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*"
+  }
+}

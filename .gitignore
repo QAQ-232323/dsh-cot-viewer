@@ -1,0 +1,16 @@
+# 开发时的自测脚本（含本机路径），不随仓库发布
+_probe/
+
+# 本地运行时数据：翻译缓存里有会话内容，不提交
+data/
+
+# 改动前的备份
+_backup/
+
+# 前端冒烟测试输出（含会话片段）
+_probe/smoke-log.txt
+
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
