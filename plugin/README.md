@@ -9,6 +9,21 @@
 - 数据源：`~/.dsh/sessions` 下的会话归档（只读，不改原始文件）。
 - 缓存与设置：`~/.dsh/cot-viewer/`（`translations.jsonl`、`settings.json`）。
 
+## 安装（手工）
+
+1. 在 `~/.dsh/profiles/<profile>/package.json` 的 `dependencies` 里加
+   `"@cetacea/dsh-cot-viewer": "link:<本仓库路径>/plugin"`；
+2. 在同一个 profile 的 `cordis.patch.yml` 里加：
+
+   ```yaml
+   - insert:
+       - id: dsh-cot-viewer
+         name: "@cetacea/dsh-cot-viewer"
+   ```
+
+3. 在该 profile 目录装一次依赖（`pnpm install`），让 `node_modules/@cetacea` 下出现链接；
+4. 重启 DSH。
+
 ## 功能
 
 - 会话列表（按最后活动排序，可按工作区筛选）

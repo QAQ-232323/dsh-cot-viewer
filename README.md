@@ -11,6 +11,25 @@
 
 两者共用同一套解析与翻译逻辑；插件把缓存放在 `~/.dsh/cot-viewer/`，独立网页放在 `data/`。
 
+## 装进 DSH
+
+独立网页不用装，双击 `启动思维链浏览器.cmd` 就能用。想用侧边栏面板：
+
+1. 在 `~/.dsh/profiles/<profile>/package.json` 的 `dependencies` 里加
+   `"@cetacea/dsh-cot-viewer": "link:<本仓库路径>/plugin"`；
+2. 在同一个 profile 的 `cordis.patch.yml` 里加：
+
+   ```yaml
+   - insert:
+       - id: dsh-cot-viewer
+         name: "@cetacea/dsh-cot-viewer"
+   ```
+
+3. 在该 profile 目录装一次依赖（DSH 用的是 `pnpm install`），让 `node_modules/@cetacea` 下出现链接；
+4. 重启 DSH，侧边栏就会出现「思维链」。
+
+卸载反过来做，细节见 `plugin/README.md`。
+
 ## 怎么用
 
 双击 **`启动思维链浏览器.cmd`**，浏览器会自动打开 <http://127.0.0.1:7388>。
